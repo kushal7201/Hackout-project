@@ -60,3 +60,8 @@ body {
   margin-top: 40px;
   letter-spacing: 2px
 }
+
+.highlight-option{
+  background-color: white;
+  color: brown;
+}

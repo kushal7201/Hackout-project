@@ -33,9 +33,9 @@ function displayHtml(element)
         <div class = "question">
           <h3>${question[element].question}</h3>
         </div>
-        <button onclick="optionSelect(1)" class="option o-1">${question[element].option1}</button>
-        <button  onclick="optionSelect(2)" class="option o-2">${question[element].option2}</button>
-        <button  onclick="optionSelect(3)" class="option o-3">${question[element].option3}</button>
+        <button  class="option button option-1" data-button-number="1">${question[element].option1}</button>
+        <button   class="option button option-2" data-button-number="2">${question[element].option2}</button>
+        <button   class="option button option-3" data-button-number="3">${question[element].option3}</button>
 
         <a onclick = "
         ${element++};
@@ -50,11 +50,18 @@ function displayHtml(element)
         </a>
       </form>`
       document.querySelector('.login-box').innerHTML = dynamicHtml;
+
+      document.querySelectorAll('.button')
+        .forEach((button) => {
+            button.addEventListener('click', () => {
+            let {buttonNumber} = button.dataset;
+            console.log(buttonNumber);
+
+            let highlightButton = document.querySelector(`.option-${buttonNumber}`);
+            console.log(highlightButton);
+            highlightButton.classList.add('highlight-option');
+            });
+        });
 }
 
 displayHtml(element);
-
-function optionSelect(param){
-    let buttonElement = document.querySelector(`.o-${param}`);
-    buttonElement.classList.add("clicked");
-}
