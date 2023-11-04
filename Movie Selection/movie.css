@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
 
 * {
   margin: 0;
@@ -9,6 +9,7 @@
 
 body {
   color: white;
+  height: 100%;
   font-family: Montserrat, sans-serif;
   background: #272935;
 }
@@ -26,7 +27,7 @@ body {
   background: #ff7ac6;
   border-color: #ff7ac6;
 }
-.row{
+.row {
   display: flex;
   flex-direction: column;
 }
@@ -48,13 +49,12 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin:30px;
+  margin: 30px;
 }
 
 .wrapper {
   width: 100%;
   min-height: 100vh;
-  padding: 15px 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -118,16 +118,14 @@ body {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
   align-items: center;
   margin-bottom: 15px;
-  margin: 15px 0 30px 0;
+  margin-top: 40px;
   background-color: #13141a;
-  padding-left: 2%;
-  padding-right: 2%;
-  padding-top: 0.9%;
-  padding-bottom: 0.9%;
-  border-radius: 20px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 165px;
+  padding-right: 165px;
 }
 
 .search-block #search-form {
@@ -149,6 +147,18 @@ body {
   background: #ff7ac6;
 }
 
+.next {
+  width: 120px;
+  background: #ff7ac6;
+  border-radius: 10px;
+  color: black;
+  padding-top: 12px;
+  text-align: center;
+  font-size: 15px;
+  padding-right: 10px;
+}
+
+
 .btn-load {
   background-color: #ff7ac6;
   padding: 10px 25px;
@@ -156,12 +166,7 @@ body {
   margin-top: 15px;
 }
 
-a {
-  color: white;
-  text-decoration: none;
-}
-
-#heading{
+#heading {
   color: #ff7ac6;
   text-align: center;
   padding: 15px;
@@ -169,36 +174,37 @@ a {
   display: block;
 }
 
-.row3{
+.row3 {
   background-color: #13141a;
 }
 
-.invisible-div-3{
+.invisible-div-3 {
   display: none;
 }
 
-.search-block #search-form input, button{
+.search-block #search-form input,
+button {
   border-radius: 10px;
   margin-right: 5px;
 }
 
-h1{
+h1 {
   margin-bottom: 10px;
   color: #ff7ac6;
 }
 
-h2{
+h2 {
   font-weight: 300;
 }
 
-@media (max-width:1000px){
-  h2{
+@media (max-width: 1000px) {
+  h2 {
     font-size: 20px;
   }
-  h1{
+  h1 {
     font-size: 25px;
   }
 }
-.black-button{
+.black-button {
   color: black;
 }

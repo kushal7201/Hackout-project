@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
+
+
 * {
   box-sizing: border-box;
   color:white;
 }
 
+
 h1{
   color: #ff7ac6;
 }
+
 
 body {
   background-color: #272935;
@@ -15,6 +19,7 @@ body {
   height: 100%;
   margin: 0;
 }
+
 
 h3 {
   margin: 10px 0;
@@ -24,6 +29,7 @@ h6 {
   margin: 5px 0;
   text-transform: uppercase;
 }
+  
 
 p {
   font-size: 14px;
@@ -44,9 +50,11 @@ p {
   background-color: #181920;
   align-items: center;
 }
+
 .logo {
   color: #ff7ac6;
 }
+
 .sideIcons {
   display: flex;
   font-size: 22px;
@@ -87,6 +95,7 @@ p {
   padding-right: 15px;
   color: #fff;
 }
+
 .informationHeader {
   display: flex;
   flex-direction: column;
@@ -126,6 +135,7 @@ p {
   left: 30px;
 }
 
+
 .card-container .round {
   border: 1px solid #231e39;
   border-radius: 50%;
@@ -145,4 +155,32 @@ p {
 
 a{
   text-decoration: none;
+}
+
+.grid-container{
+  display: grid;
+  row-gap: 10px;
+  column-gap: 10px;
+  grid-template-rows: ;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 100vh;
+  margin: 40px;
+}
+
+.item{
+  background-color: white;
+
+}
+.scrollbar{
+  overflow-y: auto;
+  background-color: grey;
+  display: block;
+  height: 20%;
+  overflow-y: auto;
+}
+
+.movie{
+  background-color: white;
+  display: block;
+  height: 80%;
 }
