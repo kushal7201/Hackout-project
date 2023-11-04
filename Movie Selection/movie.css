@@ -2,6 +2,7 @@
   margin: 0;
   box-sizing: border-box;
   outline: none;
+  color: white;
 }
 
 body {
@@ -196,4 +197,7 @@ h2{
   h1{
     font-size: 25px;
   }
+}
+.black-button{
+  color: black;
 }
