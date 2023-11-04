@@ -171,3 +171,11 @@ a {
   background-color: #101528;
 }
 
+.invisible-div-3{
+  display: none;
+}
+
+.search-block #search-form input, button{
+  border-radius: 10px;
+  margin-right: 5px;
+}
