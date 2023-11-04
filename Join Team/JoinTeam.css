@@ -36,7 +36,6 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 40px;
   color: white;
   padding-top: 8px;
   padding-bottom: 8px;

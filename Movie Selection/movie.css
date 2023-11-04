@@ -7,11 +7,23 @@
   color: white;
 }
 
+.profile-icon {
+  position: absolute;
+  background-color:#ff7ac6;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 body {
   color: white;
   height: 100%;
   font-family: Montserrat, sans-serif;
   background: #272935;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .btn {
@@ -120,7 +132,6 @@ body {
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 15px;
-  margin-top: 40px;
   background-color: #13141a;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -207,4 +218,15 @@ h2 {
 }
 .black-button {
   color: black;
+}
+
+.footer {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding-left: 165px;
+  margin-top: 15px;
+  padding-bottom: 19px;
+  padding-top: 19px;
+  background-color: #181920;
 }

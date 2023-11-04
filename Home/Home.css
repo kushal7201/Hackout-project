@@ -1,12 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 
-
-
 * {
   box-sizing: border-box;
   color:white;
 }
 
+
+.profile-icon {
+  position: absolute;
+  background-color:#ff7ac6;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
 
 h1{
   color: #ff7ac6;
@@ -18,6 +25,9 @@ body {
   font-family: Montserrat, sans-serif;
   height: 100%;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 
@@ -41,7 +51,6 @@ p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-top: 40px;
   color: white;
   padding-top: 48px;
   padding-bottom: 48px;
@@ -161,10 +170,11 @@ a{
   display: grid;
   row-gap: 10px;
   column-gap: 10px;
-  grid-template-rows: ;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   height: 100vh;
-  margin: 40px;
+  margin-top: 40px;
+  padding-left: 165px;
+  padding-right: 165px;
 }
 
 .item{
@@ -183,4 +193,15 @@ a{
   background-color: white;
   display: block;
   height: 80%;
+}
+
+.footer {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  padding-left: 165px;
+  margin-top: 20px;
+  padding-bottom: 19px;
+  padding-top: 19px;
+  background-color: #181920;
 }
