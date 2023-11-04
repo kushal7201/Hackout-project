@@ -6,6 +6,9 @@ body {
   font-family: Montserrat, sans-serif;
   background: #272935;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .login-box {
@@ -203,7 +206,7 @@ body {
   display: flex;
   flex-direction: row;
   padding-left: 165px;
-  margin-top: 37.1%;
+  margin-top: auto;
   padding-bottom: 19px;
   padding-top: 19px;
   background-color: #181920;
