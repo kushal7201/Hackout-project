@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -7,8 +9,7 @@
 
 body {
   color: white;
-  font-family: "microsoft yahei", arial, -apple-system, BlinkMacSystemFont,
-    "segoe ui", roboto, oxygen, cantarell, "helvetica neue", ubuntu, sans-serif;
+  font-family: Montserrat, sans-serif;
   background: #272935;
 }
 
@@ -38,7 +39,7 @@ body {
   justify-content: center;
 }
 .row1 {
-  background-color: #101528;
+  background-color: #13141a;
   padding-bottom: 30px;
   padding-top: 30px;
   display: flex;
@@ -121,7 +122,7 @@ body {
   align-items: center;
   margin-bottom: 15px;
   margin: 15px 0 30px 0;
-  background-color: #101528;
+  background-color: #13141a;
   padding-left: 2%;
   padding-right: 2%;
   padding-top: 0.9%;
@@ -169,7 +170,7 @@ a {
 }
 
 .row3{
-  background-color: #101528;
+  background-color: #13141a;
 }
 
 .invisible-div-3{
