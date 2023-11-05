@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+        * {
+            margin: 0;
+            box-sizing: border-box;
+            outline: none;
+            color: white;
+        }
+
+        body {
+            color: white;
+            font-family: Montserrat, sans-serif;
+            background: #272935;
+        }
+
+        .btn {
+            color: white;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 6px 8px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: inherit;
+        }
+
+        .btn:hover {
+            background: #ff7ac6;
+            border-color: #ff7ac6;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .row2 {
+            display: flex;
+            max-width: 1200px;
+            gap: 15px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .row1 {
+            background-color: #13141a;
+            padding-bottom: 30px;
+            padding-top: 30px;
+            display: flex;
+            max-width: 1200px;
+            gap: 15px;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px;
+        }
+
+        .wrapper {
+            width: 100%;
+            min-height: 100vh;
+            padding: 15px 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .wrapper .card {
+            position: relative;
+            font-size: 14px;
+            line-height: 21px;
+            width: 285px;
+            height: 360px;
+            overflow: hidden;
+            transition: 0.5s ease all;
+        }
+
+        .wrapper .card .card-content {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 50px 10px 7px;
+            background-image: linear-gradient(180deg,
+                    rgba(51, 55, 69, 0),
+                    rgba(16, 21, 40, 0.95));
+            transition: inherit;
+        }
+
+        .wrapper .card .card-content .card-cont-header {
+            padding: 8px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .wrapper .card .card-content .describe {
+            max-height: 0;
+            opacity: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            transition: inherit;
+        }
+
+        .wrapper .card:hover {
+            cursor: pointer;
+        }
+
+        .wrapper .card:hover .card-content {
+            background-image: linear-gradient(180deg, rgba(51, 55, 69, 0) 0, #101528 48%);
+        }
+
+        .wrapper .card:hover .btn {
+            background: #ff7ac6;
+            border-color: #ff7ac6;
+        }
+
+        .search-block {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            align-items: center;
+            margin-bottom: 15px;
+            margin: 15px 0 30px 0;
+            background-color: #13141a;
+            padding-left: 2%;
+            padding-right: 2%;
+            padding-top: 0.9%;
+            padding-bottom: 0.9%;
+            border-radius: 20px;
+        }
+
+        .search-block #search-form {
+            display: flex;
+            max-width: 400px;
+        }
+
+        .search-block input {
+            width: 100%;
+            max-width: 400px;
+            padding: 15px;
+            border-radius: 0;
+            border: none;
+            background: #414558;
+        }
+
+        .search-block .btn {
+            width: 120px;
+            background: #ff7ac6;
+        }
+
+        .btn-load {
+            background-color: #ff7ac6;
+            padding: 10px 25px;
+            border: none;
+            margin-top: 15px;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        #heading {
+            color: #ff7ac6;
+            text-align: center;
+            padding: 15px;
+            margin: 10px;
+            display: block;
+        }
+
+        .row3 {
+            background-color: #13141a;
+        }
+
+        .invisible-div-3 {
+            display: none;
+        }
+
+        .search-block #search-form input,
+        button {
+            border-radius: 10px;
+            margin-right: 5px;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #ff7ac6;
+        }
+
+        h2 {
+            font-weight: 300;
+        }
+
+        @media (max-width:1000px) {
+            h2 {
+                font-size: 20px;
+            }
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+
+        .black-button {
+            color: black;
+        }
+    </style>
+
+    <title>Movie Page</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="search-block">
+            <a href="/">
+                <h1>Movify</h1>
+                <h2>Select Movies You Have Watched</h2>
+            </a>
+            <form id="search-form">
+                <input type="text" id="query" placeholder="Search movies..." />
+                <button class="btn" type="submit">Search</button>
+            </form>
+        </div>
+        <div class="row">
+            <div class="row3 invisible-div-3" id="root3">
+                <h2 id="heading">Your Favourites:</h2>
+                <div class="row1" id="root1"></div>
+            </div>
+            <div class="row2" id="root2"></div>
+        </div>
+    </div>
+    <!-- <script src="movie.js"></script> -->
+    <script>
+        const apiKey = "19f84e11932abbc79e6d83f82d6d1045"
+        const URL =
+            "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=19f84e11932abbc79e6d83f82d6d1045&page=1"
+        const imgURL = "https://image.tmdb.org/t/p/w1280"
+        const searchURL =
+            "https://api.themoviedb.org/3/search/movie?&api_key=19f84e11932abbc79e6d83f82d6d1045&query="
+        const form = document.getElementById("search-form")
+        const query = document.getElementById("query")
+        const root2 = document.getElementById("root2")
+        let movies = [],
+            page = 1,
+            inSearchPage = false
+        const cardMedia = document.getElementById("card-media")
+
+        const cardMediaOnClick = (id) => {
+            // console.log("hello");
+
+            var div = document.createElement('div');
+
+            const movieElement = document.getElementById(`${id}`);
+            div.appendChild(movieElement);
+            document.getElementById('root1').appendChild(div);
+            document.querySelector('.invisible-div-3').classList.remove('invisible-div-3');
+        }
+
+        async function fetchData(URL) {
+            try {
+                const data = await fetch(URL).then((res) => res.json())
+                return data
+            } catch (error) {
+                console.log(error.message)
+                return null
+            }
+        }
+
+        const fetchAndShowResults = async (URL) => {
+            const data = await fetchData(URL)
+            data && showResults(data.results)
+        }
+
+        const getSpecificPage = (page) => {
+            const URL = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=${apiKey}&page=${page}`
+            fetchAndShowResults(URL)
+        }
+
+        const movieCard = (movie) =>
+            `<div class="col row-2-elements" id="${movie.id}">
+          <div class="card">
+            <div class="card-media" id="card-media" onclick="cardMediaOnClick(${movie.id})">
+              <img src="${movie.poster_path}" alt="PUBG Mobile" width="100%" />
+            </div>
+            <div class="card-content">
+              <div class="card-cont-header">
+                <div class="cont-left">
+                  <h3 style="font-weight:600">${movie.original_title}</h3>
+                  <span style="color: #ff7ac6">${movie.release_date}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>`
+
+        const showResults = (items) => {
+            let content = !inSearchPage ? root2.innerHTML : ""
+            if (items && items.length > 0) {
+                items.map((item) => {
+                    let { poster_path, original_title, release_date, overview, id } = item
+
+                    if (poster_path) {
+                        poster_path = imgURL + poster_path
+                    } else {
+                        poster_path = "./img-01.jpeg"
+                    }
+
+                    if (!overview) {
+                        overview = "No overview yet..."
+                    }
+
+                    if (!release_date) {
+                        release_date = "No release date"
+                    }
+
+                    const movieItem = {
+                        poster_path,
+                        original_title,
+                        release_date,
+                        overview,
+                        id
+                    }
+
+                    content += movieCard(movieItem)
+                })
+            } else {
+                content += "<p>Something went wrong!</p>"
+            }
+
+            root2.innerHTML = content
+        }
+
+        const handleLoadMore = () => {
+            getSpecificPage(++page)
+        }
+
+        const detectEndAndLoadMore = (e) => {
+            let el = document.documentElement
+            if (
+                !inSearchPage &&
+                el.scrollTop + el.clientHeight == el.scrollHeight
+            ) {
+                console.log("BINGO!")
+                handleLoadMore()
+            }
+        }
+
+        form.addEventListener("submit", async (e) => {
+            inSearchPage = true
+            e.preventDefault()
+            const searchTerm = query.value
+            searchTerm && fetchAndShowResults(searchURL + searchTerm)
+            query.value = ""
+        })
+
+        window.addEventListener("scroll", detectEndAndLoadMore)
+
+        function init() {
+            inSearchPage = false
+            fetchAndShowResults(URL)
+        }
+        init();
+    </script>
+</body>
+
+</html>

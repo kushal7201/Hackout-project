@@ -1,0 +1,10 @@
+import express from "express";
+const router = express.Router();
+import dotenv from 'dotenv';
+import userControllers from "../controllers/user.controllers.js";
+import userAuth from '../middlewares/auth.middleware.js';
+dotenv.config();
+router.get('/', userAuth, userControllers.getHomepage);
+router.post('/', userAuth, userControllers.postHomepage);
+// router.post('/:id', userControllers.postWatched);
+export default router;
