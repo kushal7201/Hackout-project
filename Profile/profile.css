@@ -30,6 +30,7 @@ body {
 
 h3 {
   margin: 10px 0;
+  color: black;
 }
 
 h6 {
@@ -131,6 +132,10 @@ p {
   position: absolute;
   top: 30px;
   left: 30px;
+}
+
+.round{
+  height: 30%;
 }
 
 .card-container .round {
