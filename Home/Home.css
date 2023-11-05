@@ -65,12 +65,7 @@ p {
 }
 
 .sideIcons {
-  display: flex;
   font-size: 22px;
-}
-
-.home {
-  margin-right: 20px;
 }
 
 .card-container {
