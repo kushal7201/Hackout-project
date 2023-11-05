@@ -12,14 +12,19 @@ let movies = [],
     inSearchPage = false
 const cardMedia=document.getElementById("card-media")
 
-const cardMediaOnClick=(id)=>{
-    console.log("hello");
-    var div = document.createElement('div');
-    
+const cardMediaOnClickFavourites = (id) => {
     const movieElement = document.getElementById(`${id}`);
-    div.appendChild(movieElement);
-    document.getElementById('root1').appendChild(div);
-    document.querySelector('.invisible-div-3').classList.remove('invisible-div-3');
+    root2.appendChild(movieElement); // Add it back to the "Display" section
+    if (!document.getElementById('root1').hasChildNodes()) { // If "Your Favourites" section is empty
+        document.querySelector('.row3').classList.add('invisible-div-3'); // Hide the section
+    }
+}
+
+const cardMediaOnClick = (id) => {
+    const movieElement = document.getElementById(`${id}`);
+    document.getElementById('root1').appendChild(movieElement); // Add it to "Your Favourites" section
+    document.querySelector('.row3').classList.remove('invisible-div-3'); // Show the section
+    movieElement.querySelector('.card-media').setAttribute('onclick', `cardMediaOnClickFavourites(${id})`); // Change onclick function to remove from favourites
 }
 
 async function fetchData(URL) {
@@ -42,10 +47,10 @@ const getSpecificPage = (page) => {
     fetchAndShowResults(URL)
 }
 
-const movieCard = (movie) =>
+const movieCard = (movie, isFavourite = false) =>
     `<div class="col row-2-elements" id="${movie.id}">
           <div class="card">
-            <div class="card-media" id="card-media" onclick="cardMediaOnClick(${movie.id})">
+            <div class="card-media" id="card-media" onclick="${isFavourite ? 'cardMediaOnClickFavourites' : 'cardMediaOnClick'}(${movie.id})">
               <img src="${movie.poster_path}" alt="PUBG Mobile" width="100%" />
             </div>
             <div class="card-content">
@@ -58,6 +63,7 @@ const movieCard = (movie) =>
             </div>
           </div>
         </div>`
+
 
 const showResults = (items) => {
     let content = !inSearchPage ? root2.innerHTML : ""
