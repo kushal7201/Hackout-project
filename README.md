@@ -14,13 +14,13 @@ Movie recommendation system based on blends within a group.
 ***
 ### Deployed at 
 #### Vercel:
-'''
+```
 https://movify11.vercel.app/
-'''
+```
 #### Github Pages:
-'''
+```
 https://kushal7201.github.io/Hackout-project/
-'''
+```
 ***
 ### Contributors
 - Kushal Bansal
